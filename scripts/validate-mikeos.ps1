@@ -1,0 +1,73 @@
+param(
+    [string]$Root = (Split-Path -Parent $PSScriptRoot)
+)
+
+$ErrorActionPreference = 'Stop'
+
+$requiredFiles = @(
+    'AGENTS.md',
+    'README.md',
+    'routes.md',
+    'registries/interfaces.md',
+    'registries/systems.md',
+    'registries/automations.md',
+    'protocols/daily-cards.md',
+    'protocols/worker-dispatch.md',
+    'protocols/source-boundaries.md',
+    'protocols/machine-health.md',
+    'protocols/dashboard.md',
+    'state/today.md',
+    'state/source-freshness.md',
+    'state/history/README.md',
+    'reports/README.md',
+    'dashboard/README.md'
+)
+
+$missing = foreach ($file in $requiredFiles) {
+    $path = Join-Path $Root $file
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+        $file
+    }
+}
+
+if ($missing.Count -gt 0) {
+    Write-Error ("Missing required MikeOS files: " + ($missing -join ', '))
+}
+
+$requiredTerms = @{
+    'AGENTS.md' = @('Daily Composition Contract', 'Evidence And Privacy', 'Action Modes')
+    'routes.md' = @('Route Matrix', 'Worker Dispatch Rules', 'Handoff Discipline')
+    'registries/interfaces.md' = @('DailyCard', 'WorkerBrief', 'WorkerReport', 'SystemRegistryEntry')
+    'protocols/source-boundaries.md' = @('Not Allowed In MikeOS', 'Writeback By Owner')
+    'state/today.md' = @('Current focus', 'Cards today', 'Recommended next action')
+}
+
+foreach ($entry in $requiredTerms.GetEnumerator()) {
+    $path = Join-Path $Root $entry.Key
+    $content = Get-Content -LiteralPath $path -Raw
+    foreach ($term in $entry.Value) {
+        if ($content -notmatch [regex]::Escape($term)) {
+            Write-Error "Required term '$term' not found in $($entry.Key)"
+        }
+    }
+}
+
+$bannedPatterns = @(
+    'raw email body:',
+    'raw teams body:',
+    'api_key=',
+    'password=',
+    'access_token='
+)
+
+$markdownFiles = Get-ChildItem -LiteralPath $Root -Recurse -File -Filter '*.md'
+foreach ($file in $markdownFiles) {
+    $content = Get-Content -LiteralPath $file.FullName -Raw
+    foreach ($pattern in $bannedPatterns) {
+        if ($content -imatch [regex]::Escape($pattern)) {
+            Write-Error "Banned pattern '$pattern' found in $($file.FullName)"
+        }
+    }
+}
+
+Write-Output "MikeOS scaffold validation passed for $Root"
