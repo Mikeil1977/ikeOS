@@ -646,7 +646,7 @@ a {
 
 .drawer-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto auto;
   gap: 14px;
   align-items: start;
 }
@@ -692,6 +692,7 @@ a {
 }
 
 .route-button,
+.landing-button,
 .mode-button {
   width: max-content;
   min-height: 38px;
@@ -705,6 +706,12 @@ a {
   color: #174f90;
   font-size: 13px;
   font-weight: 700;
+}
+
+.landing-button {
+  border-color: #8ebbe9;
+  background: var(--blue-soft);
+  color: #115a9e;
 }
 
 .drawer-counts {

@@ -102,6 +102,9 @@
 
   function setSelectedView(viewId, pushHash) {
     if (!viewId) {
+      if (pushHash && window.location.hash) {
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
+      }
       renderSelected(null);
       return;
     }
@@ -378,6 +381,12 @@
 
   function bindInteractions() {
     document.addEventListener("click", (event) => {
+      const landingTrigger = event.target.closest("[data-landing]");
+      if (landingTrigger) {
+        event.preventDefault();
+        setSelectedView(null, true);
+        return;
+      }
       const trigger = event.target.closest("[data-view], [data-zone]");
       if (!trigger) return;
       event.preventDefault();

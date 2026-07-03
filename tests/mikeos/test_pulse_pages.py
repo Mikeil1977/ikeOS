@@ -61,6 +61,7 @@ class PulsePagesTests(unittest.TestCase):
         html = index.read_text(encoding="utf-8")
         self.assertIn("MikeOS Pulse", html)
         self.assertIn("Control Room", html)
+        self.assertIn('data-landing="control-room"', html)
         self.assertIn('id="generated-at"', html)
         self.assertIn('id="task-list"', html)
         self.assertIn('src="pulse-data.js"', html)
@@ -170,6 +171,16 @@ class PulsePagesTests(unittest.TestCase):
             "2026-07-03-home-property-001",
             {task["id"] for task in data["tasksByZone"]["life-admin"]},
         )
+        self.assertIn("home-property-maintenance", data["viewsById"])
+        self.assertIn(
+            "2026-07-03-home-property-001",
+            {task["id"] for task in data["tasksByView"]["home-property-maintenance"]},
+        )
+        self.assertIn("life-admin-properties-maintenance", data["viewsById"])
+        self.assertIn(
+            "2026-07-03-home-property-001",
+            {task["id"] for task in data["tasksByView"]["life-admin-properties-maintenance"]},
+        )
 
         browser_bundle = read("dashboard/pulse/pulse-data.js")
         self.assertIn("Photo evidence", browser_bundle)
@@ -214,6 +225,8 @@ class PulsePagesTests(unittest.TestCase):
             "viewsById",
             "setSelectedView",
             "currentViewId",
+            "data-landing",
+            "pushState",
             "hashchange",
             "workbench-open",
             "task-board",
@@ -227,6 +240,7 @@ class PulsePagesTests(unittest.TestCase):
             ".control-room",
             ".scene-canvas",
             ".task-drawer",
+            ".landing-button",
             ".task-row",
             ".quick-panel",
         ]:

@@ -66,6 +66,7 @@ ZONE_DEFS = [
         "items": [
             item("Insurance", "/life-admin/insurance"),
             item("Vehicles / properties", "/life-admin/vehicles-properties"),
+            item("Property maintenance", "/life-admin/properties/maintenance"),
             item("Money", "/life-admin/personal-money"),
             item("Identity / legal", "/life-admin/identity-legal"),
             item("Health", "/life-admin/health"),
@@ -82,6 +83,7 @@ ZONE_DEFS = [
         "theme": "home",
         "items": [
             item("Live state", "/home/live-state"),
+            item("Property maintenance", "/home/property-maintenance"),
             item("Batteries", "/home/batteries"),
             item("Devices", "/home/devices"),
             item("Chores", "/home/chores"),
@@ -399,6 +401,7 @@ def build_views_and_tasks(
     tasks_by_view["life-admin-vehicles-properties"] = [
         pulse_task("vehicles-properties-index", "Review vehicle and property obligations", "watch", "Keep MOT, vehicle tax, property, landlord, and household obligations visible here as sources are connected.", "/life-admin/vehicles-properties", generated_source, "registries/obligation-types.md", "read_only")
     ]
+    tasks_by_view["life-admin-properties-maintenance"] = [card_task(card, "/life-admin/properties/maintenance") for card in cards if is_property_maintenance_card(card)]
     tasks_by_view["life-admin-identity-legal"] = [
         pulse_task("identity-legal-index", "Review identity and legal document coverage", "watch", "Use representative filenames and category counts only until an explicit document is requested.", "/life-admin/identity-legal", generated_source, "protocols/life-index.md", "read_only")
     ]
@@ -412,6 +415,7 @@ def build_views_and_tasks(
     home_tasks = tasks_by_zone.get("home", [])
     tasks_by_view["home-live-state"] = list(home_tasks)
     tasks_by_view["home-chores"] = list(home_tasks)
+    tasks_by_view["home-property-maintenance"] = [card_task(card, "/home/property-maintenance") for card in cards if is_property_maintenance_card(card)]
     tasks_by_view["home-batteries"] = [
         pulse_task("battery-review", "Check low battery signals", "soon", "Review Home Assistant battery state and the Watergate battery signal before deciding on a change.", "/home/batteries", generated_source, "Home Assistant live-state route", "read_only")
     ]

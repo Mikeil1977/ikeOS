@@ -1,6 +1,6 @@
 window.MIKEOS_PULSE_DATA = {
   "schemaVersion": 3,
-  "generatedAt": "2026-07-03 18:24 +0100",
+  "generatedAt": "2026-07-03 18:39 +0100",
   "generatedFrom": {
     "today": "state/today.md",
     "sourceFreshness": "state/source-freshness.md",
@@ -342,6 +342,11 @@ window.MIKEOS_PULSE_DATA = {
           "route": "/life-admin/vehicles-properties"
         },
         {
+          "id": "life-admin-properties-maintenance",
+          "label": "Property maintenance",
+          "route": "/life-admin/properties/maintenance"
+        },
+        {
           "id": "life-admin-personal-money",
           "label": "Money",
           "route": "/life-admin/personal-money"
@@ -380,6 +385,11 @@ window.MIKEOS_PULSE_DATA = {
           "id": "home-live-state",
           "label": "Live state",
           "route": "/home/live-state"
+        },
+        {
+          "id": "home-property-maintenance",
+          "label": "Property maintenance",
+          "route": "/home/property-maintenance"
         },
         {
           "id": "home-batteries",
@@ -883,6 +893,14 @@ window.MIKEOS_PULSE_DATA = {
       "parentZoneId": "life-admin",
       "theme": "life"
     },
+    "life-admin-properties-maintenance": {
+      "id": "life-admin-properties-maintenance",
+      "label": "Property maintenance",
+      "route": "/life-admin/properties/maintenance",
+      "summary": "Property maintenance tasks and safe handoff routes inside Life Admin.",
+      "parentZoneId": "life-admin",
+      "theme": "life"
+    },
     "life-admin-personal-money": {
       "id": "life-admin-personal-money",
       "label": "Money",
@@ -928,6 +946,14 @@ window.MIKEOS_PULSE_DATA = {
       "label": "Live state",
       "route": "/home/live-state",
       "summary": "Live state tasks and safe handoff routes inside Home.",
+      "parentZoneId": "home",
+      "theme": "home"
+    },
+    "home-property-maintenance": {
+      "id": "home-property-maintenance",
+      "label": "Property maintenance",
+      "route": "/home/property-maintenance",
+      "summary": "Property maintenance tasks and safe handoff routes inside Home.",
       "parentZoneId": "home",
       "theme": "home"
     },
@@ -1571,6 +1597,18 @@ window.MIKEOS_PULSE_DATA = {
         "actionMode": "read_only"
       }
     ],
+    "life-admin-properties-maintenance": [
+      {
+        "id": "2026-07-03-home-property-001",
+        "title": "Window surround repair candidate",
+        "urgency": "today",
+        "nextAction": "Confirm which property/window this is and decide whether to inspect, monitor, or contact a tradesperson.",
+        "route": "/life-admin/properties/maintenance",
+        "freshness": "fresh",
+        "source": "Photo evidence; property-maintenance candidate",
+        "actionMode": "route_only"
+      }
+    ],
     "life-admin-identity-legal": [
       {
         "id": "identity-legal-index",
@@ -1646,6 +1684,18 @@ window.MIKEOS_PULSE_DATA = {
         "urgency": "today",
         "nextAction": "Confirm which property/window this is and decide whether to inspect, monitor, or contact a tradesperson.",
         "route": "/home",
+        "freshness": "fresh",
+        "source": "Photo evidence; property-maintenance candidate",
+        "actionMode": "route_only"
+      }
+    ],
+    "home-property-maintenance": [
+      {
+        "id": "2026-07-03-home-property-001",
+        "title": "Window surround repair candidate",
+        "urgency": "today",
+        "nextAction": "Confirm which property/window this is and decide whether to inspect, monitor, or contact a tradesperson.",
+        "route": "/home/property-maintenance",
         "freshness": "fresh",
         "source": "Photo evidence; property-maintenance candidate",
         "actionMode": "route_only"
