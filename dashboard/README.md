@@ -12,4 +12,4 @@ The dashboard should read from:
 - `registries/automations.md`
 - `reports/`
 
-The first visual version should be Pulse-inspired but Mike-specific: compact, dark, operational, and focused on today's state rather than marketing or decoration.
+The first visual version should be Pulse-inspired but Mike-specific, read-only, and focused on today's state rather than marketing or decoration. The current preferred direction is a softer daily brief; see `2026-07-03-pulse-brief-planning.md`.
