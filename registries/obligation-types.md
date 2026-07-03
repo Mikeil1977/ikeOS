@@ -12,6 +12,7 @@ Obligation types describe things that can become due, blocked, waiting, paid, re
 | `vehicle-tax` | Vehicle tax | Vehicle owner | Life Admin, Today when due | Banking, DVLA/manual notes |
 | `health-admin` | Health admin | Mike / household | Life Admin, Today when due | Motion, Home Assistant, Life Index |
 | `utility` | Utility | Property owner | Life Admin, Home | Banking, email, Life Index |
+| `property-maintenance` | Property maintenance | Property owner | Home, Life Admin, Today when urgent | Photo intake, Home Assistant, Life Index, Motion |
 | `customer-delivery` | Customer delivery | Elysium or BC/NAV business line | Work, Today when due | PM, EA, SA, Motion |
 | `system-maintenance` | System maintenance | MikeOS/System | System, Today when blocking | PC Analysis, automations, source freshness |
 
@@ -19,4 +20,5 @@ Obligation types describe things that can become due, blocked, waiting, paid, re
 
 - VAT belongs to Elysium Dynamics Ltd or Invigorate IT Ltd, not to generic Life Admin.
 - A policy document plus a recurring payment can become an insurance renewal candidate, but MikeOS must mark uncertainty until an owner and renewal date are verified.
+- Photo-backed property issues should start as `property-maintenance` candidates until the property, severity, and next owner are confirmed.
 - Obligations may be manually seeded before a source connector exists.

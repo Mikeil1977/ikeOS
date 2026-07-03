@@ -50,6 +50,7 @@ Source systems feed evidence. Pulse pages render views. They do not own the trut
 - `/life-admin/insurance`
 - `/life-admin/vehicles`
 - `/life-admin/properties`
+- `/life-admin/properties/maintenance`
 - `/life-admin/personal-money`
 - `/life-admin/identity-legal`
 - `/life-admin/health`
@@ -60,6 +61,7 @@ Source systems feed evidence. Pulse pages render views. They do not own the trut
 
 - `/home`
 - `/home/live-state`
+- `/home/property-maintenance`
 - `/home/chores`
 - `/home/devices`
 - `/home/batteries`
@@ -85,8 +87,16 @@ Source systems feed evidence. Pulse pages render views. They do not own the trut
 - `/system/pc-analysis`
 - `/system/model-health`
 
-## V1 Prototype
+## Prototype
 
 The first prototype is `dashboard/pulse/index.html`.
 
-It is static, read-only, and uses representative text from the current MikeOS model. It does not query live connectors, render raw evidence, or expose private Life Index paths.
+It is a generated, read-only static-file cockpit. `scripts/pulse/build-pulse-data.ps1` reads MikeOS-safe Markdown and registries, writes `dashboard/pulse/pulse-data.js`, and the browser renders that bundle through `dashboard/pulse/pulse-app.js`.
+
+The browser does not query live connectors, render raw evidence, expose private Life Index paths, or perform writes.
+
+## V4 Correction
+
+The landing page is the visual control-room map. A section workbench opens only when a top-level section or KPI is selected, for example `#today`, `#work`, or `#life-admin`.
+
+Pulse task state is generated into private local SQLite at `private/pulse/pulse.sqlite`, which is ignored by git. The browser receives only distilled `pulse-data.js` output.

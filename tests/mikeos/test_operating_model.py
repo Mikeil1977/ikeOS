@@ -48,6 +48,21 @@ class OperatingModelTests(unittest.TestCase):
             "Vehicle tax",
             "Health admin",
             "Customer delivery",
+            "Property maintenance",
+        ]:
+            self.assertIn(term, content)
+
+    def test_photo_intake_protocol_keeps_images_as_private_evidence(self):
+        content = read_repo_file("protocols/photo-intake.md")
+
+        for term in [
+            "Photo evidence -> Entity -> Asset / Obligation -> View",
+            "private evidence store",
+            "distilled visual summary",
+            "raw image bytes",
+            "property-maintenance",
+            "Home",
+            "Life Admin",
         ]:
             self.assertIn(term, content)
 
