@@ -10,3 +10,5 @@ Suggested file names:
 - `YYYY-MM-DD-worker-summary-<role>.md`
 - `YYYY-MM-DD-machine-health.md`
 - `YYYY-MM-DD-source-freshness.md`
+
+Use `manual-worker-summaries/` for distilled `WorkerReport` snippets that should be considered by the local daily builder.

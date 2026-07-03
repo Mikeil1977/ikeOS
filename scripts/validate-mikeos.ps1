@@ -20,7 +20,12 @@ $requiredFiles = @(
     'state/source-freshness.md',
     'state/history/README.md',
     'reports/README.md',
-    'dashboard/README.md'
+    'dashboard/README.md',
+    'templates/README.md',
+    'templates/daily-card.md',
+    'templates/worker-brief.md',
+    'templates/worker-report.md',
+    'scripts/build-today.ps1'
 )
 
 $missing = foreach ($file in $requiredFiles) {
@@ -40,6 +45,10 @@ $requiredTerms = @{
     'registries/interfaces.md' = @('DailyCard', 'WorkerBrief', 'WorkerReport', 'SystemRegistryEntry')
     'protocols/source-boundaries.md' = @('Not Allowed In MikeOS', 'Writeback By Owner')
     'state/today.md' = @('Current focus', 'Cards today', 'Recommended next action')
+    'templates/daily-card.md' = @('DailyCard Template', 'Rules')
+    'templates/worker-brief.md' = @('WorkerBrief Template', 'write_allowed')
+    'templates/worker-report.md' = @('WorkerReport Template', 'confidence')
+    'scripts/build-today.ps1' = @('registries/systems.md', 'reports/manual-worker-summaries', 'state/today.md')
 }
 
 foreach ($entry in $requiredTerms.GetEnumerator()) {

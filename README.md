@@ -22,6 +22,7 @@ The expected answer is one coherent brief covering focus, blockers, active work,
 - `reports/` - generated scan outputs and review artifacts.
 - `dashboard/` - notes for the future read-only visual dashboard.
 - `scripts/` - local validation utilities.
+- `templates/` - reusable `DailyCard`, `WorkerBrief`, and `WorkerReport` shapes.
 
 ## Design Principles
 
@@ -42,6 +43,12 @@ Start a Codex session in `C:\IkeOS` and ask a front-door question. Examples:
 - `compose today's work/home/admin cards`
 
 For deep work, MikeOS should hand off to the relevant specialist workspace and bring back a distilled `WorkerReport`.
+
+For a local-only composition pass, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-today.ps1
+```
 
 ## Non-Goals
 
