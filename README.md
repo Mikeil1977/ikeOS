@@ -2,7 +2,7 @@
 
 MikeOS is a local front-door control plane for Mike's work, life, home, and machine context.
 
-It is not a replacement for CLARA, Practice Manager, Elysium Assistant, Solution Architect, Home Assistant, Motion, or Codex memory. It is a thin cockpit that routes into those systems, collects bounded reports, and composes a useful answer back to Mike.
+It is organized around entities, assets, obligations, and evidence. It is not a replacement for CLARA, Practice Manager, Elysium Assistant, Solution Architect, Home Assistant, Motion, Life Index, future banking, or Codex memory. It is a thin cockpit that routes into those systems, collects bounded evidence, and composes useful views back to Mike.
 
 ## V1 Promise
 
@@ -11,6 +11,8 @@ From `C:\IkeOS`, Mike should be able to ask:
 > What is on the cards today?
 
 The expected answer is one coherent brief covering focus, blockers, active work, waiting items, and next actions. It should not be four disconnected reports from four different workspaces.
+
+This daily brief is a view over the operating model, not the operating model itself.
 
 ## Current Shape
 
@@ -26,6 +28,8 @@ The expected answer is one coherent brief covering focus, blockers, active work,
 
 ## Design Principles
 
+- Entity first, category second.
+- Source evidence feeds the model; source systems do not define dashboard structure.
 - Read first, route second, write rarely.
 - Preserve specialist source-of-truth boundaries.
 - Store distilled state in MikeOS, not raw evidence.
@@ -41,6 +45,8 @@ Start a Codex session in `C:\IkeOS` and ask a front-door question. Examples:
 - `what systems are stale?`
 - `run a read-only machine-health orientation`
 - `compose today's work/home/admin cards`
+- `find insurance obligations by entity`
+- `show Invigorate business lines`
 
 For deep work, MikeOS should hand off to the relevant specialist workspace and bring back a distilled `WorkerReport`.
 

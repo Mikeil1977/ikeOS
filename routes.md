@@ -2,11 +2,14 @@
 
 Use this file to choose the owner of a request before collecting evidence or taking action.
 
+Classify the owning entity, asset, or obligation before choosing a dashboard view. Use `protocols/operating-model.md` when ownership is unclear.
+
 ## Route Matrix
 
 | Request type | Owning system | Start here | MikeOS behavior |
 | --- | --- | --- | --- |
 | Daily composition, "what is on the cards" | MikeOS plus CLARA | `protocols/daily-cards.md` | Compose one brief from bounded sources. |
+| Entity, asset, or obligation classification | MikeOS operating model | `protocols/operating-model.md` | Decide owner first, then route to a source system or view. |
 | Cross-domain life/work priority | CLARA | `C:\Users\MikeDalziel\OneDrive - Invigorate IT Ltd\Documents\Codex\CLARA\AGENTS.md` | Route and interpret, do not duplicate CLARA policy. |
 | Elysium customer state, request readiness, PM queue | Practice Manager | `C:\Users\MikeDalziel\Elysium Dynamics Ltd\*Practice Manager - Documents\AGENTS.md` | Read PM state first; ask EA/SA only when needed. |
 | Elysium evidence scan or consultant package | Elysium Assistant | `C:\Users\MikeDalziel\OneDrive - Invigorate IT Ltd\Documents\Elysium Assistant\AGENTS.md` | Request distilled evidence and PM-facing summary. |
@@ -23,6 +26,8 @@ Use this file to choose the owner of a request before collecting evidence or tak
 
 - If Mike says "check email", "check Teams", or "run triage" from MikeOS without naming a business, ask which business unless the request says `both`.
 - If Mike asks about a named Elysium customer or DP/SR item, start with Practice Manager state, then EA, then SA.
+- If Mike asks about VAT, banking, business insurance, subscriptions, invoicing, or accountant items, classify the owning business entity before routing.
+- If Mike asks about personal documents, household insurance, car, landlord, health, family, or property admin, classify under `Mike / household` before querying source systems.
 - If Mike asks "what should I do", compose daily cards; do not immediately deep-scan every system.
 - If Mike asks for a Home Assistant behavior change, route to Home Assistant and require live incident reconstruction.
 - If Mike asks for a PC scan, route to PC Analysis utilities rather than writing a new scanner.

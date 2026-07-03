@@ -6,6 +6,8 @@ Use this protocol when Mike asks to find or orient around locally saved personal
 
 The Life Index is a private local search index. It helps MikeOS find what exists on this PC without storing raw document contents in tracked MikeOS Markdown.
 
+Life Index category guesses are weak hints. They do not decide final entity, asset, or obligation ownership.
+
 ## Storage Boundary
 
 Detailed index data belongs only under:
@@ -70,6 +72,24 @@ Render a MikeOS-safe summary:
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\life-index\report-life-index.ps1
 ```
+
+## Operating Model Use
+
+Life Index produces document evidence and candidate mappings for the MikeOS operating model.
+
+Use Life Index output as an `EvidenceRef` when a local file may support an entity, asset, or obligation:
+
+- `entity`: owning person, household, business, business line, product, archive, or customer.
+- `asset`: property, vehicle, policy, subscription, product, customer project, document set, or source system.
+- `obligation`: VAT, insurance renewal, MOT, vehicle tax, subscription renewal, health admin, utility, customer delivery, or system maintenance.
+
+Examples:
+
+- A car insurance document is evidence for `Mike / household`, a vehicle asset, and an insurance renewal obligation.
+- A VAT document is evidence for the owning business entity, not generic Life Admin.
+- A NAV to BC Bridge note is evidence for `Invigorate IT Ltd > Products > NAV to BC Bridge`.
+
+Do not promote a Life Index category into a final model record without checking the owning entity.
 
 ## Report Rules
 

@@ -3,20 +3,23 @@ import sys
 import tempfile
 import unittest
 import os
+import importlib.util
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-LIFE_INDEX_DIR = REPO_ROOT / "scripts" / "life-index"
-sys.path.insert(0, str(LIFE_INDEX_DIR))
+LIFE_INDEX_PATH = REPO_ROOT / "scripts" / "life-index" / "life_index.py"
+spec = importlib.util.spec_from_file_location("mikeos_life_index", LIFE_INDEX_PATH)
+life_index = importlib.util.module_from_spec(spec)
+sys.modules["mikeos_life_index"] = life_index
+assert spec.loader is not None
+spec.loader.exec_module(life_index)
 
-from life_index import (  # noqa: E402
-    DEFAULT_EXTENSIONS,
-    DEFAULT_ROOT_SPECS,
-    iter_candidate_files,
-    build_index,
-    query_index,
-    render_safe_report,
-)
+DEFAULT_EXTENSIONS = life_index.DEFAULT_EXTENSIONS
+DEFAULT_ROOT_SPECS = life_index.DEFAULT_ROOT_SPECS
+iter_candidate_files = life_index.iter_candidate_files
+build_index = life_index.build_index
+query_index = life_index.query_index
+render_safe_report = life_index.render_safe_report
 
 
 class LifeIndexTests(unittest.TestCase):

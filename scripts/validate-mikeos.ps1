@@ -11,6 +11,10 @@ $requiredFiles = @(
     'registries/interfaces.md',
     'registries/systems.md',
     'registries/automations.md',
+    'registries/entities.md',
+    'registries/asset-types.md',
+    'registries/obligation-types.md',
+    'protocols/operating-model.md',
     'protocols/daily-cards.md',
     'protocols/worker-dispatch.md',
     'protocols/source-boundaries.md',
@@ -41,9 +45,15 @@ if ($missing.Count -gt 0) {
 
 $requiredTerms = @{
     'AGENTS.md' = @('Daily Composition Contract', 'Evidence And Privacy', 'Action Modes')
-    'routes.md' = @('Route Matrix', 'Worker Dispatch Rules', 'Handoff Discipline')
-    'registries/interfaces.md' = @('DailyCard', 'WorkerBrief', 'WorkerReport', 'SystemRegistryEntry')
+    'routes.md' = @('Route Matrix', 'Worker Dispatch Rules', 'Handoff Discipline', 'operating-model.md')
+    'registries/interfaces.md' = @('DailyCard', 'WorkerBrief', 'WorkerReport', 'SystemRegistryEntry', 'EntityRecord', 'AssetRecord', 'ObligationRecord', 'EvidenceRef')
+    'registries/entities.md' = @('Mike / household', 'Elysium Dynamics Ltd', 'Invigorate IT Ltd', 'BC/NAV Consulting / Development', 'Products', 'NAV to BC Bridge', 'Outlook to Timesheet', 'WearYourManual')
+    'registries/asset-types.md' = @('property', 'vehicle', 'bank account', 'insurance policy', 'customer project')
+    'registries/obligation-types.md' = @('VAT', 'Insurance renewal', 'Subscription renewal', 'MOT', 'Vehicle tax', 'Health admin', 'Customer delivery')
+    'protocols/operating-model.md' = @('Source evidence -> Entity -> Asset / Obligation -> View', 'Classification Order', 'Entity First Rules')
     'protocols/source-boundaries.md' = @('Not Allowed In MikeOS', 'Writeback By Owner')
+    'protocols/dashboard.md' = @('views over the operating model', 'Admin/Money is not a top-level model')
+    'protocols/life-index.md' = @('category guesses are weak hints', 'EvidenceRef')
     'state/today.md' = @('Current focus', 'Cards today', 'Recommended next action')
     'templates/daily-card.md' = @('DailyCard Template', 'Rules')
     'templates/worker-brief.md' = @('WorkerBrief Template', 'write_allowed')

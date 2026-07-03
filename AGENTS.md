@@ -4,7 +4,7 @@ This folder is the front-door control plane for Mike Dalziel's local operating s
 
 ## Purpose
 
-Use `C:\IkeOS` as the cockpit for cross-domain orientation, daily composition, and work routing. MikeOS should answer "what is on the cards today?" by composing distilled state from existing systems, not by becoming a second copy of those systems.
+Use `C:\IkeOS` as the cockpit for cross-domain orientation, daily composition, and work routing. MikeOS is organized around entities, assets, obligations, and evidence. MikeOS should answer "what is on the cards today?" by composing a view over that operating model, not by becoming a second copy of source systems.
 
 MikeOS is read-first and low-autonomy. It routes work to specialist spaces when deep evidence, live-system state, or write-capable actions are needed.
 
@@ -14,9 +14,13 @@ MikeOS is read-first and low-autonomy. It routes work to specialist spaces when 
 2. `routes.md`
 3. `registries/systems.md`
 4. `registries/interfaces.md`
-5. `registries/automations.md`
-6. Relevant file in `protocols/`
-7. `state/today.md`
+5. `protocols/operating-model.md`
+6. `registries/entities.md`
+7. `registries/asset-types.md`
+8. `registries/obligation-types.md`
+9. `registries/automations.md`
+10. Relevant file in `protocols/`
+11. `state/today.md`
 
 After reading these files, follow the route to the specialist workspace and read that workspace's own `AGENTS.md` before acting there.
 
@@ -37,11 +41,12 @@ MikeOS is the front door.
 At the start of a MikeOS session:
 
 1. Read the MikeOS read order above.
-2. Classify the request as `daily_composition`, `routing`, `work_triage`, `home_ops`, `personal_support`, `business_ops`, `customer_delivery`, `machine_health`, `project_work`, or `system_governance`.
-3. Check `state/today.md` for the latest composed state and staleness notes.
-4. Use `routes.md` to choose the owning system.
-5. If the request crosses domains, create bounded `WorkerBrief` requests rather than doing broad rummaging from MikeOS.
-6. Compose one human-facing answer back in MikeOS using `DailyCard` or `WorkerReport` summaries.
+2. Classify the owning entity before choosing a dashboard view.
+3. Identify whether the request is about an asset, obligation, source-system check, or cross-domain priority.
+4. Check `state/today.md` for the latest composed state and staleness notes.
+5. Use `routes.md` to choose the owning system.
+6. If the request crosses domains, create bounded `WorkerBrief` requests rather than doing broad rummaging from MikeOS.
+7. Compose one human-facing answer back in MikeOS using `EntityRecord`, `AssetRecord`, `ObligationRecord`, `DailyCard`, or `WorkerReport` summaries as appropriate.
 
 ## Daily Composition Contract
 
@@ -56,6 +61,8 @@ When Mike asks "what is on the cards today?", produce one composed brief with th
 - Recommended next action
 
 Use `protocols/daily-cards.md` for the exact process and output shape. Do not paste raw source material into the brief.
+
+Daily composition is a view over current entities, assets, obligations, source freshness, and worker reports. It is not the primary MikeOS data model.
 
 ## Routing Rules
 

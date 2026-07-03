@@ -2,6 +2,60 @@
 
 These contracts keep MikeOS summaries structured and low-noise.
 
+## `EntityRecord`
+
+Use `EntityRecord` for a person, household, business, business line, product, archive, customer, property owner, or other owner in the MikeOS operating model.
+
+| Field | Meaning |
+| --- | --- |
+| `entity_id` | Stable local identifier, e.g. `invigorate-it-ltd`. |
+| `name` | Human-readable entity name. |
+| `kind` | `person_household`, `business`, `business_line`, `product`, `customer`, `property`, `vehicle`, `archive`, or `system`. |
+| `parent_entity_id` | Optional parent entity, e.g. `invigorate-it-ltd` for a business line. |
+| `canonical_route` | Owning route or workspace for deeper evidence. |
+| `status` | `active`, `planned`, `archive`, or `unknown`. |
+
+## `AssetRecord`
+
+Use `AssetRecord` for something an entity owns, maintains, or needs evidence about.
+
+| Field | Meaning |
+| --- | --- |
+| `asset_id` | Stable local identifier. |
+| `entity_id` | Owning entity. |
+| `asset_type` | Type from `registries/asset-types.md`. |
+| `title` | Human-readable asset name. |
+| `status` | `active`, `candidate`, `stale`, `archive`, or `unknown`. |
+| `evidence_refs` | Distilled `EvidenceRef` pointers only. |
+
+## `ObligationRecord`
+
+Use `ObligationRecord` for something that can become due, blocked, waiting, paid, renewed, or completed.
+
+| Field | Meaning |
+| --- | --- |
+| `obligation_id` | Stable local identifier. |
+| `entity_id` | Owning entity. |
+| `asset_id` | Optional related asset. |
+| `obligation_type` | Type from `registries/obligation-types.md`. |
+| `title` | Human-readable obligation name. |
+| `status` | `open`, `due`, `waiting`, `paid`, `renewed`, `complete`, `stale`, or `unknown`. |
+| `due_date` | Optional date when known. |
+| `next_action` | Smallest useful next action. |
+| `evidence_refs` | Distilled `EvidenceRef` pointers only. |
+
+## `EvidenceRef`
+
+Use `EvidenceRef` for a safe pointer to source evidence without copying raw source content.
+
+| Field | Meaning |
+| --- | --- |
+| `source_system` | `Life Index`, `Banking`, `Motion`, `Home Assistant`, `CLARA`, `PM`, `EA`, `SA`, `PC Analysis`, or another registered system. |
+| `source_ref` | Safe file path, canonical record link, or source label. |
+| `summary` | Distilled fact, never raw body text. |
+| `freshness` | `fresh`, `today`, `stale`, `unknown`, or timestamp. |
+| `confidence` | `high`, `medium`, or `low`. |
+
 ## `DailyCard`
 
 Use `DailyCard` for an item that may appear in the daily cockpit brief.
@@ -10,6 +64,10 @@ Use `DailyCard` for an item that may appear in the daily cockpit brief.
 | --- | --- |
 | `id` | Stable local identifier, e.g. `2026-07-03-elysium-001`. |
 | `domain` | `work`, `home`, `health`, `admin_money`, `projects`, `system`, or `personal`. |
+| `view` | View where the card should appear, e.g. `Today`, `Work`, `Life Admin`, `Home`, `Projects`, or `System`. |
+| `entity_id` | Optional entity from `registries/entities.md`. |
+| `asset_id` | Optional related asset. |
+| `obligation_id` | Optional related obligation. |
 | `title` | Human-readable card title. |
 | `why_now` | Why this matters today. |
 | `next_action` | The smallest useful next action. |
