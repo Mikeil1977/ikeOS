@@ -1,0 +1,8 @@
+private/
+.superpowers/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.scan.log
+__pycache__/
+.pytest_cache/

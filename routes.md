@@ -13,6 +13,7 @@ Use this file to choose the owner of a request before collecting evidence or tak
 | Implementation, NAV/BC package, customer repo output | Solution Architect | `C:\Users\MikeDalziel\Invigorate IT Ltd\Invigorate IT Ltd - General\Visual Studio\Solution Architect\AGENTS.md` | Require PM queue item plus EA package before dev work. |
 | Home automations, reminders, occupancy, live state | Home Assistant | `C:\Users\MikeDalziel\OneDrive - Invigorate IT Ltd\Documents\Codex\CLARA\HomeAssistant\AGENTS.md` | Start from live evidence and Home Assistant workflow. |
 | Managed tasks and task scheduling | Motion | Connector plus CLARA tool registry | Treat Motion as task state, not reminder delivery. |
+| Local personal documents, archives, insurance, policies, paperwork | Life Index | `protocols/life-index.md` | Query the private local index; store only distilled summaries in MikeOS. |
 | Work email, Teams, ADO triage across businesses | CLARA Work | `C:\Users\MikeDalziel\OneDrive - Invigorate IT Ltd\Documents\Codex\CLARA\Work\AGENTS.md` | Clarify Elysium vs Invigorate IT vs both unless context is pinned. |
 | Machine diagnostics and restart/service/storage checks | PC Analysis | `C:\Users\MikeDalziel\OneDrive - Invigorate IT Ltd\Documents\Codex\Utilities\PC Analysis` | Reuse existing utilities; store only reports or pointers. |
 | Codex automations and thread/runtime state | Codex app / `.codex` | `registries/automations.md` | Inspect active jobs and summarize health/staleness. |
@@ -25,6 +26,7 @@ Use this file to choose the owner of a request before collecting evidence or tak
 - If Mike asks "what should I do", compose daily cards; do not immediately deep-scan every system.
 - If Mike asks for a Home Assistant behavior change, route to Home Assistant and require live incident reconstruction.
 - If Mike asks for a PC scan, route to PC Analysis utilities rather than writing a new scanner.
+- If Mike asks to find local saved personal paperwork, use the Life Index protocol before broad filesystem rummaging.
 
 ## Worker Dispatch Rules
 
