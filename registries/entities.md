@@ -12,7 +12,6 @@ Entities are the owners of assets, obligations, evidence, and dashboard cards. C
 | `product-nav-to-bc-bridge` | NAV to BC Bridge | product | `invigorate-products` | Product concept for NAV-to-Business-Central transition support. | Products business line | planned |
 | `product-outlook-to-timesheet` | Outlook to Timesheet | product | `invigorate-products` | Product concept for turning Outlook/calendar activity into timesheet support. | Products business line | planned |
 | `invigorate-wearyourmanual` | WearYourManual | business_line | `invigorate-it-ltd` | WearYourManual product/shop/fulfilment line under Invigorate IT Ltd. | WearYourManual route | active |
-| `asb-archive` | ASB archive | archive | `invigorate-it-ltd` | Historical ConnectWise asset reports and related archive material. | Life Index / Work archive | archive |
 
 ## Rules
 

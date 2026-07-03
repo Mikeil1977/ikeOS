@@ -4,6 +4,12 @@ This folder is reserved for a future read-only visual dashboard.
 
 V1 is Markdown-first. Build a visual dashboard only after the entity / asset / obligation operating model and source-freshness contracts have proven useful in daily use.
 
+The first static Pulse prototype lives under `pulse/`:
+
+- `pulse/index.html` - read-only front page and subpage map.
+- `pulse/page-plan.md` - durable route/page plan.
+- `pulse/pulse.css` - local prototype styles.
+
 The dashboard should read from:
 
 - `state/today.md`

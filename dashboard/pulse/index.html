@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MikeOS Pulse</title>
+  <link rel="stylesheet" href="pulse.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Pulse navigation">
+      <div class="brand">
+        <div class="brand-mark">M</div>
+        <div>
+          <h1>MikeOS Pulse</h1>
+          <p>Read-only views over entities, assets, obligations, and evidence.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="#today">Today <span class="dot today-dot"></span></a>
+        <a href="#work">Work <span class="dot work-dot"></span></a>
+        <a href="#life-admin">Life Admin <span class="dot life-dot"></span></a>
+        <a href="#home">Home <span class="dot home-dot"></span></a>
+        <a href="#projects">Projects <span class="dot projects-dot"></span></a>
+        <a href="#system">System <span class="dot system-dot"></span></a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="hero" id="today">
+        <div class="panel hero-main">
+          <div class="meta-row">
+            <span class="small-label">Today as operating-model pulse</span>
+            <span class="status">Sources visible · read-only prototype</span>
+          </div>
+          <h2>Protect focus, clear obligations, keep evidence quiet.</h2>
+          <p class="hero-copy">Pulse starts with what needs attention today, grouped by entity and backed by assets, obligations, source freshness, and safe evidence pointers.</p>
+          <div class="next-action">
+            <strong>Recommended next action</strong>
+            <p>Run a bounded admin pass: Invigorate invoicing and subscription review, then Elysium PM stale handoffs, without opening raw evidence unless routed.</p>
+          </div>
+        </div>
+
+        <div class="panel model-card">
+          <span class="small-label">Evidence -> Entity -> Asset / Obligation -> View</span>
+          <div class="model-flow" aria-label="Evidence to view flow">
+            <div class="model-step">Evidence <span>Life Index, banking, Motion, Home Assistant, PM, EA, SA</span></div>
+            <div class="model-step">Entity <span>Household, Elysium, Invigorate, business lines, products</span></div>
+            <div class="model-step">Asset / Obligation <span>Policies, vehicles, VAT, products, customer delivery</span></div>
+            <div class="model-step">View <span>Today, Work, Life Admin, Home, Projects, System</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view-strip" aria-label="Top-level Pulse views">
+        <a class="view-tile today-bg" href="#today"><strong>Today</strong><span>Current priorities, due obligations, waiting items, freshness, and next action.</span></a>
+        <a class="view-tile work-bg" href="#work"><strong>Work</strong><span>Business entities, business lines, company admin, and delivery obligations.</span></a>
+        <a class="view-tile life-bg" href="#life-admin"><strong>Life Admin</strong><span>Personal documents, vehicles, properties, policies, health, family, legal.</span></a>
+        <a class="view-tile home-bg" href="#home"><strong>Home</strong><span>Live state, chores, devices, batteries, appliances, automations.</span></a>
+        <a class="view-tile projects-bg" href="#projects"><strong>Projects</strong><span>MikeOS, CLARA, DnD, experiments, and parked builds.</span></a>
+        <a class="view-tile system-bg" href="#system"><strong>System</strong><span>Sources, automations, Motion, Life Index, PC Analysis, model health.</span></a>
+      </section>
+
+      <section class="grid two">
+        <div class="panel section">
+          <h3>Due / needs attention</h3>
+          <div class="card-list">
+            <article class="pulse-card alert">
+              <div class="card-title">Invoicing and subscription decision <span class="tag work">Work</span></div>
+              <div class="fact-row"><b>Entity</b><span>Invigorate IT Ltd</span></div>
+              <div class="fact-row"><b>Obligation</b><span>Invoicing / subscription review</span></div>
+              <div class="fact-row"><b>Source</b><span>Motion and daily composition state</span></div>
+            </article>
+            <article class="pulse-card">
+              <div class="card-title">PM scheduled handoffs are stale <span class="tag work">Work</span></div>
+              <div class="fact-row"><b>Entity</b><span>Elysium Dynamics Ltd</span></div>
+              <div class="fact-row"><b>Obligation</b><span>Customer delivery / queue hygiene</span></div>
+              <div class="fact-row"><b>Source</b><span>PM Work Queue</span></div>
+            </article>
+            <article class="pulse-card">
+              <div class="card-title">Watergate battery alert <span class="tag home">Home</span></div>
+              <div class="fact-row"><b>Entity</b><span>Mike / household</span></div>
+              <div class="fact-row"><b>Asset</b><span>Property / device</span></div>
+              <div class="fact-row"><b>Action</b><span>Replace 4 x AA lithium batteries</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel section">
+          <h3>Entity focus</h3>
+          <div class="card-list">
+            <article class="pulse-card">
+              <div class="card-title">Invigorate IT Ltd <span class="tag work">Business</span></div>
+              <div class="fact-row"><b>Lines</b><span>BC/NAV Consulting, Products, WearYourManual</span></div>
+              <div class="fact-row"><b>Products</b><span>NAV to BC Bridge, Outlook to Timesheet</span></div>
+              <div class="fact-row"><b>Admin</b><span>VAT, invoicing, banking, insurance, subscriptions</span></div>
+            </article>
+            <article class="pulse-card">
+              <div class="card-title">Mike / household <span class="tag life">Life Admin</span></div>
+              <div class="fact-row"><b>Assets</b><span>Properties, vehicles, policies, document sets</span></div>
+              <div class="fact-row"><b>Obligations</b><span>Insurance, MOT, vehicle tax, health admin, utilities</span></div>
+              <div class="fact-row"><b>Sources</b><span>Life Index, Home Assistant, Motion, future banking</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel section" style="margin-top:18px">
+        <h3>Pulse subpages</h3>
+        <div class="page-map">
+          <div class="route-group" id="work">
+            <h3 class="work-bg">Work</h3>
+            <ul>
+              <li>Elysium Dynamics <code>/work/elysium-dynamics</code></li>
+              <li>Elysium company admin <code>/work/elysium-dynamics/company-admin</code></li>
+              <li>Elysium customer operations <code>/work/elysium-dynamics/customer-operations</code></li>
+              <li>Invigorate IT <code>/work/invigorate-it</code></li>
+              <li>Invigorate company admin <code>/work/invigorate-it/company-admin</code></li>
+              <li>BC/NAV consulting <code>/work/invigorate-it/bc-nav-consulting</code></li>
+              <li>Customers <code>/work/invigorate-it/bc-nav-consulting/customers</code></li>
+              <li>Products <code>/work/invigorate-it/products</code></li>
+              <li>NAV to BC Bridge <code>/work/invigorate-it/products/nav-to-bc-bridge</code></li>
+              <li>Outlook to Timesheet <code>/work/invigorate-it/products/outlook-to-timesheet</code></li>
+              <li>WearYourManual <code>/work/invigorate-it/wearyourmanual</code></li>
+            </ul>
+          </div>
+
+          <div class="route-group" id="life-admin">
+            <h3 class="life-bg">Life Admin</h3>
+            <ul>
+              <li>Overview <code>/life-admin</code></li>
+              <li>Insurance <code>/life-admin/insurance</code></li>
+              <li>Vehicles <code>/life-admin/vehicles</code></li>
+              <li>Properties <code>/life-admin/properties</code></li>
+              <li>Personal money <code>/life-admin/personal-money</code></li>
+              <li>Identity / legal <code>/life-admin/identity-legal</code></li>
+              <li>Health <code>/life-admin/health</code></li>
+              <li>Family / education <code>/life-admin/family-education</code></li>
+              <li>Documents <code>/life-admin/documents</code></li>
+            </ul>
+          </div>
+
+          <div class="route-group" id="home">
+            <h3 class="home-bg">Home</h3>
+            <ul>
+              <li>Overview <code>/home</code></li>
+              <li>Live state <code>/home/live-state</code></li>
+              <li>Chores <code>/home/chores</code></li>
+              <li>Devices <code>/home/devices</code></li>
+              <li>Batteries <code>/home/batteries</code></li>
+              <li>Appliances <code>/home/appliances</code></li>
+              <li>Automations <code>/home/automations</code></li>
+            </ul>
+          </div>
+
+          <div class="route-group" id="projects">
+            <h3 class="projects-bg">Projects</h3>
+            <ul>
+              <li>Overview <code>/projects</code></li>
+              <li>MikeOS <code>/projects/mikeos</code></li>
+              <li>CLARA <code>/projects/clara</code></li>
+              <li>DnD / worldbuilding <code>/projects/dnd-worldbuilding</code></li>
+              <li>Experiments <code>/projects/experiments</code></li>
+              <li>Parked <code>/projects/parked</code></li>
+            </ul>
+          </div>
+
+          <div class="route-group" id="system">
+            <h3 class="system-bg">System</h3>
+            <ul>
+              <li>Overview <code>/system</code></li>
+              <li>Sources <code>/system/sources</code></li>
+              <li>Automations <code>/system/automations</code></li>
+              <li>Motion <code>/system/motion</code></li>
+              <li>Life Index <code>/system/life-index</code></li>
+              <li>PC Analysis <code>/system/pc-analysis</code></li>
+              <li>Model health <code>/system/model-health</code></li>
+            </ul>
+          </div>
+
+          <div class="route-group">
+            <h3 class="today-bg">Today</h3>
+            <ul>
+              <li>Pulse <code>/today</code></li>
+              <li>Due now <code>/today/due</code></li>
+              <li>Waiting on me <code>/today/waiting-on-me</code></li>
+              <li>Waiting on others <code>/today/waiting-on-others</code></li>
+              <li>Parked <code>/today/parked</code></li>
+              <li>Source freshness <code>/today/source-freshness</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Static prototype. It does not query live connectors, render raw evidence, expose private Life Index paths, or perform writes.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

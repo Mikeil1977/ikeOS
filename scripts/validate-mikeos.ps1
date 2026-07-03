@@ -25,6 +25,9 @@ $requiredFiles = @(
     'state/history/README.md',
     'reports/README.md',
     'dashboard/README.md',
+    'dashboard/pulse/index.html',
+    'dashboard/pulse/page-plan.md',
+    'dashboard/pulse/pulse.css',
     'templates/README.md',
     'templates/daily-card.md',
     'templates/worker-brief.md',
@@ -54,6 +57,8 @@ $requiredTerms = @{
     'protocols/source-boundaries.md' = @('Not Allowed In MikeOS', 'Writeback By Owner')
     'protocols/dashboard.md' = @('views over the operating model', 'Admin/Money is not a top-level model')
     'protocols/life-index.md' = @('category guesses are weak hints', 'EvidenceRef')
+    'dashboard/pulse/index.html' = @('MikeOS Pulse', 'Evidence -> Entity -> Asset / Obligation -> View', 'Life Admin')
+    'dashboard/pulse/page-plan.md' = @('/today', '/work/invigorate-it/products/nav-to-bc-bridge', '/life-admin/vehicles', '/system/life-index')
     'state/today.md' = @('Current focus', 'Cards today', 'Recommended next action')
     'templates/daily-card.md' = @('DailyCard Template', 'Rules')
     'templates/worker-brief.md' = @('WorkerBrief Template', 'write_allowed')
