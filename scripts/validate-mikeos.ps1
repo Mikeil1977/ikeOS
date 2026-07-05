@@ -29,6 +29,7 @@ $requiredFiles = @(
     'dashboard/README.md',
     'dashboard/pulse/index.html',
     'dashboard/pulse/page-plan.md',
+    'dashboard/pulse/assets/control-room-bg.png',
     'dashboard/pulse/pulse.css',
     'dashboard/pulse/pulse-app.js',
     'dashboard/pulse/pulse-data.js',
@@ -65,6 +66,7 @@ $requiredTerms = @{
     'protocols/photo-intake.md' = @('Photo evidence -> Entity -> Asset / Obligation -> View', 'private evidence store', 'raw image bytes', 'property-maintenance')
     'protocols/life-index.md' = @('category guesses are weak hints', 'EvidenceRef')
     'dashboard/pulse/index.html' = @('MikeOS Pulse', 'Evidence -> Entity -> Asset / Obligation -> View', 'Life Admin', 'data-landing="control-room"')
+    'dashboard/pulse/pulse.css' = @('assets/control-room-bg.png', 'background:', 'data-zone')
     'dashboard/pulse/pulse-app.js' = @('MIKEOS_PULSE_DATA', 'generatedAt', 'tasksByZone', 'tasksByView', 'setSelectedView', 'data-view', 'data-landing', 'task-board')
     'dashboard/pulse/pulse-data.js' = @('MIKEOS_PULSE_DATA', 'generatedAt', 'cards', 'sources', 'sections', 'zones', 'tasksByZone', 'viewsById', 'tasksByView')
     'scripts/pulse/build-pulse-data.ps1' = @('source-freshness.md', 'Assert-PulseSafe', 'pulse-data.js', 'tasksByZone')

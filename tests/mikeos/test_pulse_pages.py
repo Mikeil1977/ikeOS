@@ -53,12 +53,15 @@ class PulsePagesTests(unittest.TestCase):
         stylesheet = REPO_ROOT / "dashboard" / "pulse" / "pulse.css"
         app = REPO_ROOT / "dashboard" / "pulse" / "pulse-app.js"
         data = REPO_ROOT / "dashboard" / "pulse" / "pulse-data.js"
+        background = REPO_ROOT / "dashboard" / "pulse" / "assets" / "control-room-bg.png"
 
         self.assertTrue(index.is_file())
         self.assertTrue(stylesheet.is_file())
         self.assertTrue(app.is_file())
         self.assertTrue(data.is_file())
+        self.assertTrue(background.is_file())
         html = index.read_text(encoding="utf-8")
+        css = stylesheet.read_text(encoding="utf-8")
         self.assertIn("MikeOS Pulse", html)
         self.assertIn("Control Room", html)
         self.assertIn('data-landing="control-room"', html)
@@ -66,6 +69,7 @@ class PulsePagesTests(unittest.TestCase):
         self.assertIn('id="task-list"', html)
         self.assertIn('src="pulse-data.js"', html)
         self.assertIn('src="pulse-app.js"', html)
+        self.assertIn("assets/control-room-bg.png", css)
         self.assertNotIn("/work/archives/asb", html)
 
     def test_pulse_data_builder_generates_safe_live_bundle(self):
