@@ -65,11 +65,14 @@ class PulsePagesTests(unittest.TestCase):
         self.assertIn("MikeOS Pulse", html)
         self.assertIn("Control Room", html)
         self.assertIn('data-landing="control-room"', html)
+        self.assertIn('class="scene-stage"', html)
+        self.assertIn('class="scene-art"', html)
+        self.assertIn("assets/control-room-bg.png", html)
         self.assertIn('id="generated-at"', html)
         self.assertIn('id="task-list"', html)
         self.assertIn('src="pulse-data.js"', html)
         self.assertIn('src="pulse-app.js"', html)
-        self.assertIn("assets/control-room-bg.png", css)
+        self.assertNotIn('url("assets/control-room-bg.png") center center / cover', css)
         self.assertNotIn("/work/archives/asb", html)
 
     def test_pulse_data_builder_generates_safe_live_bundle(self):
